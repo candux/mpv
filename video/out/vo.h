@@ -30,8 +30,12 @@
 #include "common/common.h"
 #include "options/options.h"
 
-#define VO_EVENT_EXPOSE 1
-#define VO_EVENT_RESIZE 2
+enum mp_voevent {
+    VO_EVENT_NONE = 0,
+    VO_EVENT_EXPOSE,
+    VO_EVENT_RESIZE,
+    VO_EVENT_ICC_PROFILE_PATH_CHANGED
+};
 
 enum mp_voctrl {
     /* signal a device reset seek */
@@ -80,6 +84,8 @@ enum mp_voctrl {
     VOCTRL_SCREENSHOT,                  // struct voctrl_screenshot_args*
 
     VOCTRL_SET_COMMAND_LINE,            // char**
+
+    VOCTRL_GET_ICC_PROFILE_PATH,        // char**
 };
 
 // VOCTRL_SET_EQUALIZER
