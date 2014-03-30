@@ -30,7 +30,6 @@
 #include "common/common.h"
 #include "options/options.h"
 
-#define VO_EVENT_NONE   0
 #define VO_EVENT_EXPOSE 1
 #define VO_EVENT_RESIZE 2
 #define VO_EVENT_ICC_PROFILE_PATH_CHANGED 4
