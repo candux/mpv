@@ -396,9 +396,10 @@ static int control(struct vo *vo, uint32_t request, void *data)
         resize(p);
     if (events & VO_EVENT_EXPOSE)
         vo->want_redraw = true;
-    if (events & VO_EVENT_ICC_PROFILE_PATH_CHANGED)
+    if (events & VO_EVENT_ICC_PROFILE_PATH_CHANGED) {
         get_and_update_icc_profile(vo, p->icc_opts);
         vo->want_redraw = true;
+    }
     mpgl_unlock(p->glctx);
 
     return r;

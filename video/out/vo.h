@@ -30,12 +30,10 @@
 #include "common/common.h"
 #include "options/options.h"
 
-enum mp_voevent {
-    VO_EVENT_NONE = 0,
-    VO_EVENT_EXPOSE,
-    VO_EVENT_RESIZE,
-    VO_EVENT_ICC_PROFILE_PATH_CHANGED
-};
+#define VO_EVENT_NONE   0
+#define VO_EVENT_EXPOSE 1
+#define VO_EVENT_RESIZE 2
+#define VO_EVENT_ICC_PROFILE_PATH_CHANGED 4
 
 enum mp_voctrl {
     /* signal a device reset seek */

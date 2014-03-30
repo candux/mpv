@@ -112,8 +112,8 @@ bool mp_icc_set_profile(struct mp_icc_opts *opts, char *profile)
     if (!opts->profile || strcmp(opts->profile, profile) != 0) {
         if (opts->profile)
             talloc_free(opts->profile);
-        opts->profile = talloc_strdup(opts, icc);
-        return true
+        opts->profile = talloc_strdup(opts, profile);
+        return true;
     }
     return false;
 }
