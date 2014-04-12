@@ -192,6 +192,13 @@ void print_status(struct MPContext *mpctx)
 
     sadd_percentage(&line, get_percent_pos(mpctx));
 
+    if (mpctx->current_track[0][STREAM_AUDIO]) {
+        saddf(&line, " aid: %d", mpctx->current_track[0][STREAM_AUDIO]->user_tid);
+    }
+    if (mpctx->current_track[0][STREAM_SUB]) {
+        saddf(&line, " sid: %d", mpctx->current_track[0][STREAM_SUB]->user_tid);
+    }
+
     // other
     if (opts->playback_speed != 1)
         saddf(&line, " x%4.2f", opts->playback_speed);
